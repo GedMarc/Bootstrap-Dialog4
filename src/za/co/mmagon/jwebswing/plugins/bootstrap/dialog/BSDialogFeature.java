@@ -19,7 +19,6 @@ package za.co.mmagon.jwebswing.plugins.bootstrap.dialog;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 
 import java.util.Objects;
 
@@ -34,10 +33,6 @@ public class BSDialogFeature<J extends BSDialogFeature<J>> extends Feature<BSDia
 {
 
 	private static final long serialVersionUID = 1L;
-	/**
-	 * The options for the dialog
-	 */
-	private BSDialogOptions options;
 
 	/**
 	 * Constructs a new Tooltip ComponentFeatureBase for a component. Adds the tooltip text as the Title attribute to the component
@@ -49,7 +44,6 @@ public class BSDialogFeature<J extends BSDialogFeature<J>> extends Feature<BSDia
 	{
 		super("BSDialogFeature");
 		setComponent(forComponent);
-		BootstrapPageConfigurator.setRequired(forComponent, true);
 	}
 
 	/**
@@ -61,11 +55,11 @@ public class BSDialogFeature<J extends BSDialogFeature<J>> extends Feature<BSDia
 	@Override
 	public BSDialogOptions getOptions()
 	{
-		if (options == null)
+		if (super.getOptions() == null)
 		{
-			options = new BSDialogOptions();
+			setOptions(new BSDialogOptions());
 		}
-		return options;
+		return super.getOptions();
 	}
 
 	@Override
