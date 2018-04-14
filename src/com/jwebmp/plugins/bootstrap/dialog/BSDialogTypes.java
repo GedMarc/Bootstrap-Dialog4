@@ -14,16 +14,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.dialog;
+package com.jwebmp.plugins.bootstrap.dialog;
 
-import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.jwebmp.utilities.StaticStrings;
+
+import static com.jwebmp.utilities.StaticStrings.CHAR_DASH;
 
 /**
- * @author Marc Magon
+ * @author GedMarc
  * @version 1.0
- * @since 07 Aug 2015
+ * @since Oct 3, 2016
  */
-interface BSDialogChildren extends GlobalChildren
+public enum BSDialogTypes
 {
+	TYPE_DEFAULT,
+	TYPE_INFO,
+	TYPE_PRIMARY,
+	TYPE_SUCCESS,
+	TYPE_WARNING,
+	TYPE_DANGER;
+
+	@JsonValue
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
+	}
 
 }

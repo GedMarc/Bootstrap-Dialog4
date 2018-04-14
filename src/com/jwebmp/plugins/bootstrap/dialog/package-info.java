@@ -14,32 +14,4 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.dialog;
-
-import com.fasterxml.jackson.annotation.JsonValue;
-import za.co.mmagon.jwebswing.utilities.StaticStrings;
-
-import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
-
-/**
- * @author GedMarc
- * @version 1.0
- * @since Oct 3, 2016
- */
-public enum BSDialogTypes
-{
-	TYPE_DEFAULT,
-	TYPE_INFO,
-	TYPE_PRIMARY,
-	TYPE_SUCCESS,
-	TYPE_WARNING,
-	TYPE_DANGER;
-
-	@JsonValue
-	@Override
-	public String toString()
-	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
-	}
-
-}
+package com.jwebmp.plugins.bootstrap.dialog;

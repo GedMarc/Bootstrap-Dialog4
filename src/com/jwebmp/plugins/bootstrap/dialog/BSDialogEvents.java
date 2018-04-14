@@ -14,21 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.dialog;
+package com.jwebmp.plugins.bootstrap.dialog;
 
-import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
+import com.jwebmp.base.html.interfaces.events.GlobalEvents;
 
 /**
- * @author GedMarc
+ * @author Marc Magon
+ * @version 1.0
+ * @since 07 Aug 2015
  */
-enum BSDialogAttributes implements AttributeDefinitions
+public interface BSDialogEvents
+		extends GlobalEvents
 {
 
-	Visibility;
-
-	@Override
-	public boolean isKeyword()
-	{
-		return false;
-	}
 }

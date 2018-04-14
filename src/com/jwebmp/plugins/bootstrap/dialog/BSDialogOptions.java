@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.dialog;
+package com.jwebmp.plugins.bootstrap.dialog;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.base.ComponentHierarchyBase;
+import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
 
 /**
  * All the options for the tooltip library
@@ -166,7 +166,7 @@ public class BSDialogOptions<J extends BSDialogOptions>
 	@JsonProperty("title")
 	private String getTitleHTML()
 	{
-		return this.title == null ? "" : this.title.toString(true);
+		return title == null ? "" : title.toString(true);
 	}
 
 	/**
@@ -195,7 +195,7 @@ public class BSDialogOptions<J extends BSDialogOptions>
 	@JsonProperty("message")
 	private String getMessageHTML()
 	{
-		return this.message == null ? "" : this.message.toString(true);
+		return message == null ? "" : message.toString(true);
 	}
 
 	/**

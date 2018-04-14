@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.dialog;
+package com.jwebmp.plugins.bootstrap.dialog;
 
-import za.co.mmagon.jwebswing.Page;
-import za.co.mmagon.jwebswing.PageConfigurator;
-import za.co.mmagon.jwebswing.plugins.PluginInformation;
+import com.jwebmp.Page;
+import com.jwebmp.PageConfigurator;
+import com.jwebmp.plugins.PluginInformation;
 import za.co.mmagon.logger.LogFactory;
 
 import java.util.logging.Logger;
@@ -40,13 +40,14 @@ import java.util.logging.Logger;
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/BootstrapDialogPlugin.jar/download",
 		pluginIconUrl = "bower_components/bootstrap3-dialog/bootstrap_dialog_icon.jpg",
 		pluginIconImageUrl = "bower_components/bootstrap3-dialog/bootstrap_dialog_logo.jpg",
-		pluginLastUpdatedDate = "2017/03/04"
-)
-public class BSDialogPageConfigurator extends PageConfigurator
+		pluginLastUpdatedDate = "2017/03/04")
+public class BSDialogPageConfigurator
+		extends PageConfigurator
 {
 
 	private static final long serialVersionUID = 1L;
-	private static final Logger log = LogFactory.getInstance().getLogger("BootstrapDialog");
+	private static final Logger log = LogFactory.getInstance()
+	                                            .getLogger("BootstrapDialog");
 
 	public BSDialogPageConfigurator()
 	{
@@ -60,11 +61,19 @@ public class BSDialogPageConfigurator extends PageConfigurator
 	{
 		if (!page.isConfigured())
 		{
-			page.getBody().getJavascriptReferences().add(BSDialogReferencePool.Bootstrap4DialogReference.getJavaScriptReference());
-			page.getBody().getCssReferences().add(BSDialogReferencePool.Bootstrap4DialogReference.getCssReference());
+			page.getBody()
+			    .getJavascriptReferences()
+			    .add(BSDialogReferencePool.Bootstrap4DialogReference.getJavaScriptReference());
+			page.getBody()
+			    .getCssReferences()
+			    .add(BSDialogReferencePool.Bootstrap4DialogReference.getCssReference());
 
-			page.getBody().getJavascriptReferences().remove(BSDialogReferencePool.BootstrapDialogReference.getJavaScriptReference());
-			page.getBody().getCssReferences().remove(BSDialogReferencePool.BootstrapDialogReference.getCssReference());
+			page.getBody()
+			    .getJavascriptReferences()
+			    .remove(BSDialogReferencePool.BootstrapDialogReference.getJavaScriptReference());
+			page.getBody()
+			    .getCssReferences()
+			    .remove(BSDialogReferencePool.BootstrapDialogReference.getCssReference());
 		}
 
 		return page;

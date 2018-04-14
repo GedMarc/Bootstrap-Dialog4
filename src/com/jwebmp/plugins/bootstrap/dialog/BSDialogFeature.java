@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.dialog;
+package com.jwebmp.plugins.bootstrap.dialog;
 
-import za.co.mmagon.jwebswing.Component;
-import za.co.mmagon.jwebswing.Feature;
-import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.Component;
+import com.jwebmp.Feature;
+import com.jwebmp.base.html.interfaces.GlobalFeatures;
 
 import java.util.Objects;
 
@@ -29,7 +29,9 @@ import java.util.Objects;
  * @version 1.0
  * @since 2013/01/16
  */
-public class BSDialogFeature<J extends BSDialogFeature<J>> extends Feature<BSDialogOptions, J> implements BSDialogFeatures, GlobalFeatures
+public class BSDialogFeature<J extends BSDialogFeature<J>>
+		extends Feature<BSDialogOptions, J>
+		implements BSDialogFeatures, GlobalFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -44,6 +46,31 @@ public class BSDialogFeature<J extends BSDialogFeature<J>> extends Feature<BSDia
 	{
 		super("BSDialogFeature");
 		setComponent(forComponent);
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getOptions());
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof BSDialogFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		BSDialogFeature<?> that = (BSDialogFeature<?>) o;
+		return Objects.equals(getComponent(), that.getComponent());
 	}
 
 	/**
@@ -69,30 +96,5 @@ public class BSDialogFeature<J extends BSDialogFeature<J>> extends Feature<BSDia
 		requiredString += getOptions().toString();
 		requiredString += ");" + getNewLine();
 		addQuery(requiredString);
-	}
-
-	@Override
-	public boolean equals(Object o)
-	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof BSDialogFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		BSDialogFeature<?> that = (BSDialogFeature<?>) o;
-		return Objects.equals(getComponent(), that.getComponent());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getOptions());
 	}
 }

@@ -14,12 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.bootstrap.dialog;
+package com.jwebmp.plugins.bootstrap.dialog;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import za.co.mmagon.jwebswing.utilities.StaticStrings;
+import com.jwebmp.utilities.StaticStrings;
 
-import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+import static com.jwebmp.utilities.StaticStrings.CHAR_DASH;
 
 /**
  * @author GedMarc
