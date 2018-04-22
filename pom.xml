@@ -40,7 +40,7 @@
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <sonar.host.url>https://jwebswing.com/sonar</sonar.host.url>
+        <sonar.host.url>https://jwebmp.com/sonar</sonar.host.url>
         <sonar.exclusions>**bower_components</sonar.exclusions>
     </properties>
 
@@ -144,13 +144,7 @@
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>jwebmp-core</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-            <type>test-jar</type>
-        </dependency>
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>jwebmp-bootstrap4</artifactId>
