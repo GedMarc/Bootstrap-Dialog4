@@ -19,9 +19,6 @@ package com.jwebmp.plugins.bootstrap.dialog;
 import com.jwebmp.Page;
 import com.jwebmp.PageConfigurator;
 import com.jwebmp.plugins.PluginInformation;
-import za.co.mmagon.logger.LogFactory;
-
-import java.util.logging.Logger;
 
 /**
  * @author GedMarc
@@ -46,8 +43,6 @@ public class BSDialogPageConfigurator
 {
 
 	private static final long serialVersionUID = 1L;
-	private static final Logger log = LogFactory.getInstance()
-	                                            .getLogger("BootstrapDialog");
 
 	public BSDialogPageConfigurator()
 	{
