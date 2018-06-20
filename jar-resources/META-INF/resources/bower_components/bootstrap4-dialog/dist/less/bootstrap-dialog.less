@@ -13,11 +13,14 @@
 @gray-light: lighten(@gray-base, 46.7%); // #777
 @gray-lighter: lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary: darken(#428bca, 6.5%); // #337ab7
-@brand-success: #5cb85c;
-@brand-info: #5bc0de;
-@brand-warning: #f0ad4e;
-@brand-danger: #d9534f;
+@brand-primary: #007bff;
+@brand-secondary: #6c757d;
+@brand-success: #28a745;
+@brand-info: #17a2b8;
+@brand-warning: #ffc107;
+@brand-danger: #dc3545;
+@brand-light: #f8f9fa;
+@brand-dark: #343a40;
 
 //== Scaffolding
 //
@@ -145,6 +148,10 @@
 @btn-primary-bg: @brand-primary;
 @btn-primary-border: darken(@btn-primary-bg, 5%);
 
+@btn-secondary-color: #fff;
+@btn-secondary-bg: @brand-secondary;
+@btn-secondary-border: darken(@btn-primary-bg, 5%);
+
 @btn-success-color: #fff;
 @btn-success-bg: @brand-success;
 @btn-success-border: darken(@btn-success-bg, 5%);
@@ -160,6 +167,14 @@
 @btn-danger-color: #fff;
 @btn-danger-bg: @brand-danger;
 @btn-danger-border: darken(@btn-danger-bg, 5%);
+
+@btn-light-color: #000;
+@btn-light-bg: @brand-light;
+@btn-light-border: darken(@btn-light-bg, 5%);
+
+@btn-dark-color: #fff;
+@btn-dark-bg: @brand-dark;
+@btn-dark-border: darken(@btn-dark-bg, 5%);
 
 @btn-link-disabled-color: @gray-light;
 
@@ -1945,6 +1960,12 @@
     }
   }
 
+  @media (min-width: 1172px) {
+    .modal-xl {
+      max-width: 95%;
+    }
+  }
+
   /* dialog types */
   &.type-default {
     .modal-header {
@@ -1967,6 +1988,12 @@
     }
   }
 
+  &.type-secondary {
+    .modal-header {
+      background-color: @brand-secondary;
+    }
+  }
+
   &.type-success {
     .modal-header {
       background-color: @brand-success;
@@ -1985,6 +2012,17 @@
     }
   }
 
+  &.type-light {
+    .modal-header {
+      background-color: @brand-light;
+    }
+  }
+
+  &.type-dark {
+    .modal-header {
+      background-color: @brand-dark;
+    }
+  }
   &.size-large {
     .bootstrap-dialog-title {
       font-size: 24px;

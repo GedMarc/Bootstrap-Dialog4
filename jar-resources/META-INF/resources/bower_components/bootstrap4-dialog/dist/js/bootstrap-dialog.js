@@ -202,27 +202,34 @@
     BootstrapDialog.TYPE_DEFAULT = 'type-default';
     BootstrapDialog.TYPE_INFO = 'type-info';
     BootstrapDialog.TYPE_PRIMARY = 'type-primary';
+    BootstrapDialog.TYPE_SECONDARY = 'type-secondary';
     BootstrapDialog.TYPE_SUCCESS = 'type-success';
     BootstrapDialog.TYPE_WARNING = 'type-warning';
     BootstrapDialog.TYPE_DANGER = 'type-danger';
+    BootstrapDialog.TYPE_DARK = 'type-dark';
+    BootstrapDialog.TYPE_LIGHT = 'type-light';
     BootstrapDialog.DEFAULT_TEXTS = {};
-    BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_DEFAULT] = 'Information';
+    BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_DEFAULT] = 'Default';
     BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_INFO] = 'Information';
-    BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_PRIMARY] = 'Information';
+    BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_PRIMARY] = 'Primary';
+    BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_SECONDARY] = 'Secondary';
     BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_SUCCESS] = 'Success';
     BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_WARNING] = 'Warning';
     BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_DANGER] = 'Danger';
+    BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_DARK] = 'Dark';
+    BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_LIGHT] = 'Light';
     BootstrapDialog.DEFAULT_TEXTS['OK'] = 'OK';
     BootstrapDialog.DEFAULT_TEXTS['CANCEL'] = 'Cancel';
     BootstrapDialog.DEFAULT_TEXTS['CONFIRM'] = 'Confirmation';
     BootstrapDialog.SIZE_NORMAL = 'size-normal';
     BootstrapDialog.SIZE_SMALL = 'size-small';
     BootstrapDialog.SIZE_WIDE = 'size-wide';    // size-wide is equal to modal-lg
+    BootstrapDialog.SIZE_EXTRAWIDE = 'size-extrawide';    // size-wide is equal to modal-lg
     BootstrapDialog.SIZE_LARGE = 'size-large';
     BootstrapDialog.BUTTON_SIZES = {};
     BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_NORMAL] = '';
-    BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_SMALL] = '';
-    BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_WIDE] = '';
+    BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_SMALL] = 'btn-small';
+    BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_WIDE] = 'btn-block';
     BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_LARGE] = 'btn-lg';
     BootstrapDialog.ICON_SPINNER = 'glyphicon glyphicon-asterisk';
     BootstrapDialog.BUTTONS_ORDER_CANCEL_OK = 'btns-order-cancel-ok';
@@ -370,6 +377,17 @@
     };
     BootstrapDialog.METHODS_TO_OVERRIDE['v3.3'] = {};
     BootstrapDialog.METHODS_TO_OVERRIDE['v3.3.4'] = $.extend({}, BootstrapDialog.METHODS_TO_OVERRIDE['v3.1']);
+    BootstrapDialog.METHODS_TO_OVERRIDE['v4.0'] = { //FIXME for BootstrapV4
+        getModalBackdrop: function ($modal) {
+            return $($modal.data('bs.modal')._backdrop);
+        },
+        handleModalBackdropEvent: BootstrapDialog.METHODS_TO_OVERRIDE['v3.1']['handleModalBackdropEvent'],
+        updateZIndex: BootstrapDialog.METHODS_TO_OVERRIDE['v3.1']['updateZIndex'],
+        open: BootstrapDialog.METHODS_TO_OVERRIDE['v3.1']['open'],
+        getModalForBootstrapDialogModal: function () {
+            return this.getModal().get(0);
+        }
+    };
     BootstrapDialog.METHODS_TO_OVERRIDE['v4.1'] = { //FIXME for BootstrapV4
         getModalBackdrop: function ($modal) {
             return $($modal.data('bs.modal')._backdrop);
@@ -536,8 +554,11 @@
                 var types = [BootstrapDialog.TYPE_DEFAULT,
                     BootstrapDialog.TYPE_INFO,
                     BootstrapDialog.TYPE_PRIMARY,
+                    BootstrapDialog.TYPE_SECONDARY,
                     BootstrapDialog.TYPE_SUCCESS,
                     BootstrapDialog.TYPE_WARNING,
+                    BootstrapDialog.TYPE_DARK,
+                    BootstrapDialog.TYPE_LIGHT,
                     BootstrapDialog.TYPE_DANGER];
 
                 this.getModal().removeClass(types.join(' ')).addClass(this.getType());
@@ -562,6 +583,7 @@
                 this.getModal().removeClass(BootstrapDialog.SIZE_NORMAL)
                     .removeClass(BootstrapDialog.SIZE_SMALL)
                     .removeClass(BootstrapDialog.SIZE_WIDE)
+                    .removeClass(BootstrapDialog.SIZE_EXTRAWIDE)
                     .removeClass(BootstrapDialog.SIZE_LARGE);
                 this.getModal().addClass(this.getSize());
 
@@ -575,6 +597,11 @@
                 this.getModalDialog().removeClass('modal-lg');
                 if (this.getSize() === BootstrapDialog.SIZE_WIDE) {
                     this.getModalDialog().addClass('modal-lg');
+                }
+                // Extra Wide Dialog.
+                this.getModalDialog().removeClass('modal-xl');
+                if (this.getSize() === BootstrapDialog.SIZE_EXTRAWIDE) {
+                    this.getModalDialog().addClass('modal-xl');
                 }
 
                 // Button size
