@@ -103,12 +103,6 @@ public class BSDialog<J extends BSDialog<J>>
 	}
 
 	@Override
-	public int hashCode()
-	{
-		return Objects.hash(super.hashCode(), getFeature());
-	}
-
-	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -125,5 +119,11 @@ public class BSDialog<J extends BSDialog<J>>
 		}
 		BSDialog<?> bsDialog = (BSDialog<?>) o;
 		return Objects.equals(getComponent(), bsDialog.getComponent());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(super.hashCode(), getFeature());
 	}
 }

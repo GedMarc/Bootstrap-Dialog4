@@ -27,7 +27,8 @@ import com.jwebmp.base.servlets.interfaces.ReferencePool;
  * @author GedMarc
  * @since 20 Apr 2016
  */
-public enum BSDialogReferencePool implements ReferencePool
+public enum BSDialogReferencePool
+		implements ReferencePool
 {
 	BootstrapDialogReference(new JavascriptReference("BootstrapDialog", 1.351, "bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js", 15),
 	                         new CSSReference("BootstrapDialogCSS", 1.351, "bower_components/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css")),
