@@ -44,6 +44,7 @@
             <version>${project.version}</version>
             <classifier>${jwebmp.runtime.classifier}</classifier>
             <type>jar</type>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -51,6 +52,7 @@
             <artifactId>jwebmp-bootstrap4</artifactId>
             <version>${project.version}</version>
             <classifier>${jwebmp.runtime.classifier}</classifier>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -58,6 +60,7 @@
             <version>${project.version}</version>
             <classifier>${jwebmp.runtime.classifier}</classifier>
             <type>jar</type>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
