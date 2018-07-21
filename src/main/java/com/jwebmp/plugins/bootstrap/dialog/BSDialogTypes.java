@@ -17,9 +17,9 @@
 package com.jwebmp.plugins.bootstrap.dialog;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.jwebmp.utilities.StaticStrings;
+import com.jwebmp.core.utilities.StaticStrings;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

@@ -19,8 +19,8 @@ package com.jwebmp.plugins.bootstrap.dialog;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 /**
  * All the options for the tooltip library

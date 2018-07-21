@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.bootstrap.dialog;
 
-import com.jwebmp.base.references.CSSReference;
-import com.jwebmp.base.references.JavascriptReference;
-import com.jwebmp.base.servlets.enumarations.RequirementsPriority;
-import com.jwebmp.base.servlets.interfaces.ReferencePool;
+import com.jwebmp.core.base.references.CSSReference;
+import com.jwebmp.core.base.references.JavascriptReference;
+import com.jwebmp.core.base.servlets.enumarations.RequirementsPriority;
+import com.jwebmp.core.base.servlets.interfaces.ReferencePool;
 
 /**
  * Default reference pool structure

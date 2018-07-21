@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.dialog;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 import java.util.Objects;
 

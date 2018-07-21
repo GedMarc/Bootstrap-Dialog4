@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.dialog;
 
-import com.jwebmp.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 
 /**
  * @author Marc Magon

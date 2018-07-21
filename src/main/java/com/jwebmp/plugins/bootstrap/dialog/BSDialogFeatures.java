@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.bootstrap.dialog;
 
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 
 /**
  * @author Marc Magon
