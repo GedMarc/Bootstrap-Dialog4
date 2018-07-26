@@ -10,4 +10,5 @@ module com.jwebmp.plugins.bootstrap.dialog4 {
 
 	provides IPageConfigurator with BSDialogPageConfigurator;
 
+	opens com.jwebmp.plugins.bootstrap.dialog to com.fasterxml.jackson.databind,com.jwebmp.core;
 }
