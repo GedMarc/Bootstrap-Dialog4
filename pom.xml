@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.jwebmp</groupId>
-        <artifactId>jwebmp-bom</artifactId>
+        <artifactId>jwebmp-parent</artifactId>
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>
 
