@@ -28,8 +28,8 @@ import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
  * @since 2013/01/16
  */
 public class BSDialogFeature<J extends BSDialogFeature<J>>
-		extends Feature<BSDialogOptions, J>
-		implements BSDialogFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, BSDialogOptions, J>
+
 {
 
 	private static final long serialVersionUID = 1L;
