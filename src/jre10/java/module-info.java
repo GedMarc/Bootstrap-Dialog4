@@ -7,8 +7,9 @@ module com.jwebmp.plugins.bootstrap.dialog4 {
 	requires com.jwebmp.core;
 	requires com.jwebmp.logmaster;
 	requires com.fasterxml.jackson.annotation;
+	requires java.validation;
 
 	provides IPageConfigurator with BSDialogPageConfigurator;
 
-	opens com.jwebmp.plugins.bootstrap.dialog to com.fasterxml.jackson.databind,com.jwebmp.core;
+	opens com.jwebmp.plugins.bootstrap.dialog to com.fasterxml.jackson.databind, com.jwebmp.core;
 }
