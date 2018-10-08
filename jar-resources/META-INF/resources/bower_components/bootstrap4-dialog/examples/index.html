@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
-          type="text/css"/>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.9/css/bootstrap-dialog.min.css"
-          rel="stylesheet" type="text/css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.9/js/bootstrap-dialog.min.js"></script>
+    <link href="https://jwebmp.com/bower_components/bootstrap4/dist/css/bootstrap.min.css?v=4.11" rel="stylesheet" type="text/css">
+
+    <link href="../dist/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css">
+
+    <script src="https://jwebmp.com/bower_components/jquery/dist/jquery.min.js?v=3.31" type="text/javascript"></script>
+    <script src="https://jwebmp.com/bower_components/popper.js/dist/umd/popper.min.js?v=4.11" type="text/javascript"></script>
+    <script src="https://jwebmp.com/bower_components/bootstrap4/dist/js/bootstrap.min.js?v=4.11" type="text/javascript"></script>
+
+    <script src="../dist/js/bootstrap-dialog.min.js" type="text/javascript"></script>
+
     <meta charset="utf-8"/>
     <title>BootstrapDialog examples</title>
     <style>
@@ -22,8 +24,7 @@
     <h2>Make use of Bootstrap's modal more monkey-friendly.</h2>
     <hr/>
     <p>
-        Monkeys love the <a href="http://getbootstrap.com/javascript/#modals" target="_blank">Modal Dialog from
-        Bootstrap</a>, but they're getting angry because they have to write this stuff:
+        Monkeys love the <a href="http://getbootstrap.com/javascript/#modals" target="_blank">Modal Dialog from Bootstrap</a>, but they're getting angry because they have to write this stuff:
     </p>
     <pre class="prettyprint">&lt;div class="modal fade"&gt;<br/>  &lt;div class="modal-dialog"&gt;<br/>    &lt;div class="modal-content"&gt;<br/>      &lt;div class="modal-header"&gt;<br/>        &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;<br/>        &lt;h4 class="modal-title"&gt;Modal title&lt;/h4&gt;<br/>      &lt;/div&gt;<br/>      &lt;div class="modal-body"&gt;<br/>        &lt;p&gt;One fine body&hellip;&lt;/p&gt;<br/>      &lt;/div&gt;<br/>      &lt;div class="modal-footer"&gt;<br/>        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;<br/>        &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;<br/>      &lt;/div&gt;<br/>    &lt;/div&gt;&lt;!-- /.modal-content --&gt;<br/>  &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;<br/>&lt;/div&gt;&lt;!-- /.modal --&gt;
     </pre>
@@ -35,8 +36,7 @@
     </div>
     <p></p>
     <p>
-        Like it? See <a href="#available-options">Available Options</a> or try more <a href="#examples">Examples</a>
-        below.
+        Like it? See <a href="#available-options">Available Options</a> or try more <a href="#examples">Examples</a> below.
     </p>
 
     <!-- Examples -->
@@ -110,8 +110,7 @@
     <a name="loading-remote-page"></a>
     <h3>Loading remote page (1)</h3>
     <p>
-        There are some workarounds for loading remote page into BootstrapDialog as message, one of those workarounds is
-        as below. <br/>
+        There are some workarounds for loading remote page into BootstrapDialog as message, one of those workarounds is as below. <br/>
         Check out the <a href="./remote.html" target="_blank">remote.html</a>.
     </p>
     <div class="source-code runnable">
@@ -134,7 +133,7 @@
                 var $message = $('<div></div>');
                 var pageToLoad = dialog.getData('pageToLoad');
                 $message.load(pageToLoad);
-        
+
                 return $message;
             },
             data: {
@@ -193,7 +192,7 @@
                     event.data.$footerButton.stopSpin();
                     dialog.setClosable(true);
                 });
-                
+
                 return $content;
             },
             buttons: [{
@@ -215,8 +214,7 @@
     <p>
         Try to press the keys that have been associated with buttons below. <br/>
         The <strong>last button</strong> is disabled so nothing is going to happen when pressing its hotkey. <br/>
-        Please note that if there are some components that require keyboard operations in your dialog, conflicts may
-        occur, you can try next example.
+        Please note that if there are some components that require keyboard operations in your dialog, conflicts may occur, you can try next example.
     </p>
     <div class="source-code runnable">
         <!--
@@ -310,14 +308,14 @@
             message: 'Hi Apple!'
         });
         dialogInstance1.open();
-        
+
         // Construct by using setters
         var dialogInstance2 = new BootstrapDialog();
         dialogInstance2.setTitle('Dialog instance 2');
         dialogInstance2.setMessage('Hi Orange!');
         dialogInstance2.setType(BootstrapDialog.TYPE_SUCCESS);
         dialogInstance2.open();
-        
+
         // Using chain callings
         var dialogInstance3 = new BootstrapDialog()
             .setTitle('Dialog instance 3')
@@ -337,9 +335,7 @@
     </div>
 
     <h3>Open / Close multiple dialogs</h3>
-    <p>This example demonstrates opening and closing a batch of dialogs at one time. <br/>Dialog that created by
-        BootstrapDialog will be in a container <strong>BootstrapDialog.dialogs</strong> before it's closed and
-        destroyed, iterate <strong>BootstrapDialog.dialogs</strong> to find all dialogs that havn't been destroyed.</p>
+    <p>This example demonstrates opening and closing a batch of dialogs at one time. <br/>Dialog that created by BootstrapDialog will be in a container <strong>BootstrapDialog.dialogs</strong> before it's closed and destroyed, iterate <strong>BootstrapDialog.dialogs</strong> to find all dialogs that havn't been destroyed.</p>
     <div class="source-code runnable">
         <!--
         var howManyDialogs = 5;
@@ -390,13 +386,13 @@
     <h3>Message types</h3>
     <div class="source-code runnable">
         <!--
-        var types = [BootstrapDialog.TYPE_DEFAULT, 
-                     BootstrapDialog.TYPE_INFO, 
-                     BootstrapDialog.TYPE_PRIMARY, 
-                     BootstrapDialog.TYPE_SUCCESS, 
-                     BootstrapDialog.TYPE_WARNING, 
+        var types = [BootstrapDialog.TYPE_DEFAULT,
+                     BootstrapDialog.TYPE_INFO,
+                     BootstrapDialog.TYPE_PRIMARY,
+                     BootstrapDialog.TYPE_SUCCESS,
+                     BootstrapDialog.TYPE_WARNING,
                      BootstrapDialog.TYPE_DANGER];
-                     
+
         $.each(types, function(index, type){
             BootstrapDialog.show({
                 type: type,
@@ -405,7 +401,7 @@
                 buttons: [{
                     label: 'I do nothing.'
                 }]
-            });     
+            });
         });
         -->
     </div>
@@ -414,13 +410,13 @@
     <h3>Changing dialog type</h3>
     <div class="source-code runnable">
         <!--
-        var types = [BootstrapDialog.TYPE_DEFAULT, 
-                     BootstrapDialog.TYPE_INFO, 
-                     BootstrapDialog.TYPE_PRIMARY, 
-                     BootstrapDialog.TYPE_SUCCESS, 
-                     BootstrapDialog.TYPE_WARNING, 
+        var types = [BootstrapDialog.TYPE_DEFAULT,
+                     BootstrapDialog.TYPE_INFO,
+                     BootstrapDialog.TYPE_PRIMARY,
+                     BootstrapDialog.TYPE_SUCCESS,
+                     BootstrapDialog.TYPE_WARNING,
                      BootstrapDialog.TYPE_DANGER];
-                     
+
         var buttons = [];
         $.each(types, function(index, type) {
             buttons.push({
@@ -442,8 +438,7 @@
 
     <h3>Larger dialog</h3>
     <p>
-        By default, the dialog size is 'size-normal' or BootstrapDialog.SIZE_NORMAL, but you can have a larger dialog by
-        setting option 'size' to 'size-large' or BootstrapDialog.SIZE_LARGE.
+        By default, the dialog size is 'size-normal' or BootstrapDialog.SIZE_NORMAL, but you can have a larger dialog by setting option 'size' to 'size-large' or BootstrapDialog.SIZE_LARGE.
     </p>
     <div class="source-code runnable">
         <!--
@@ -512,14 +507,13 @@
     </div>
 
     <h3>Rich message</h3>
-    <p>BootstrapDialog supports displaying rich content, so you can even use a video clip as your message in the
-        dialog.</p>
+    <p>BootstrapDialog supports displaying rich content, so you can even use a video clip as your message in the dialog.</p>
     <div class="source-code runnable">
         <!--
         var $textAndPic = $('<div></div>');
         $textAndPic.append('Who\'s this? <br />');
         $textAndPic.append('<img src="./images/pig.ico" />');
-        
+
         BootstrapDialog.show({
             title: 'Guess who that is',
             message: $textAndPic,
@@ -540,8 +534,7 @@
 
     <h3>Dialog closable / unclosable</h3>
     <p>
-        If option 'closable' is set to false, the default closing behaviors will be disabled, but you can still close
-        the dialog by using dialog.close().
+        If option 'closable' is set to false, the default closing behaviors will be disabled, but you can still close the dialog by using dialog.close().
     </p>
     <div class="source-code runnable">
         <!--
@@ -573,10 +566,8 @@
     <a name="more-close-controls"></a>
     <h3>More controls on closing a dialog.</h3>
     <p>
-        By default, when option 'closable' is set to true, dialog can be closed by these ways: clicking outside the
-        dialog, pressing ESC key, clicking the close icon on the right of dialog header. <br/>
-        If you want your dialog closes only when the close icon in dialog header was clicked, try setting both of the
-        options 'closeByBackdrop' and 'closeByKeyboard' to false.
+        By default, when option 'closable' is set to true, dialog can be closed by these ways: clicking outside the dialog, pressing ESC key, clicking the close icon on the right of dialog header. <br/>
+        If you want your dialog closes only when the close icon in dialog header was clicked, try setting both of the options 'closeByBackdrop' and 'closeByKeyboard' to false.
     </p>
     <div class="source-code runnable">
         <!--
@@ -654,10 +645,8 @@
     <a name="dialog-draggable"></a>
     <h3>Dialog Draggable</h3>
     <p>
-        When option 'draggable' is set to <strong>true</strong>, your dialog can be moved by dragging on its header.
-        <br/>
-        If you would like to change the cursor shape of hovering on dialog header, you can try the following css lines:
-        <br/>
+        When option 'draggable' is set to <strong>true</strong>, your dialog can be moved by dragging on its header. <br/>
+        If you would like to change the cursor shape of hovering on dialog header, you can try the following css lines: <br/>
     <div class="source-code">
         .bootstrap-dialog .modal-header.bootstrap-dialog-draggable {
         cursor: move;
@@ -685,7 +674,7 @@
                     event.data.dialogRef.close();
                 });
                 $message.append($button);
-        
+
                 return $message;
             },
             closable: false
@@ -729,8 +718,7 @@
     </div>
 
     <h3>Adding a description to your dialog (for accessibility)</h3>
-    <p>This adds an 'aria-describedby' attribute to your dialog, which provides a description of the dialog for screen
-        readers.</p>
+    <p>This adds an 'aria-describedby' attribute to your dialog, which provides a description of the dialog for screen readers.</p>
     <div class="source-code runnable">
         <!--
         BootstrapDialog.show({
@@ -769,8 +757,7 @@
 
     <h3>Dialog events</h3>
     <p>
-        Please note that if you're going to use setters to configure event handlers, use dialog.onShow(function) and
-        dialog.onHide(function).
+        Please note that if you're going to use setters to configure event handlers, use dialog.onShow(function) and dialog.onHide(function).
     </p>
     <div class="source-code runnable">
         <!--
@@ -795,10 +782,8 @@
     <a name="stop-closing-dialog"></a>
     <h3>Stop closing your dialog.</h3>
     <p>
-        Option 'onhide' gives you an opportunity to stop closing the dialog according to some conditions, making your
-        'onhide' callback returns false to stop closing the dialog. <br/>
-        In the following example, the dialog closes only when your most favorite fruit is '<strong>banana</strong>'
-        (Case insensitive).
+        Option 'onhide' gives you an opportunity to stop closing the dialog according to some conditions, making your 'onhide' callback returns false to stop closing the dialog. <br/>
+        In the following example, the dialog closes only when your most favorite fruit is '<strong>banana</strong>' (Case insensitive).
     </p>
     <div class="source-code runnable">
         <!--
@@ -926,8 +911,7 @@
     <h2>Available options</h2>
     <hr/>
     <p>
-        Please note that all options described below are <strong>optional</strong>, but you will have a weird dialog if
-        you don't even give it a message to display.
+        Please note that all options described below are <strong>optional</strong>, but you will have a weird dialog if you don't even give it a message to display.
         <br/>
         Most options can be set via init options or property setters.
     </p>
@@ -957,8 +941,7 @@
                 BootstrapDialog.TYPE_DANGER or 'type-danger'
             </td>
             <td>
-                Give your dialog a specific look, color scheme can be seen on <a
-                    href="http://getbootstrap.com/css/#buttons" target="_blank">Bootstrap's Button</a>.
+                Give your dialog a specific look, color scheme can be seen on <a href="http://getbootstrap.com/css/#buttons" target="_blank">Bootstrap's Button</a>.
             </td>
         </tr>
         <tr>
@@ -1022,14 +1005,11 @@
                     }]
                     });
                 </div>
-                <strong>id</strong>: optional, if id is set, you can use dialogInstance.getButton(id) to get the button
-                later. <br/>
+                <strong>id</strong>: optional, if id is set, you can use dialogInstance.getButton(id) to get the button later. <br/>
                 <strong>icon</strong>: optional, if set, the specified icon will be added to the button. <br/>
                 <strong>cssClass</strong>: optional, additional css class to be added to the button. <br/>
-                <strong>autospin</strong>: optinal, if it's true, after clicked the button a spinning icon appears.
-                <br/>
-                <strong>action</strong>: optional, if provided, the callback will be invoked after the button is
-                clicked, and the dialog instance will be passed to the callback function.
+                <strong>autospin</strong>: optinal, if it's true, after clicked the button a spinning icon appears. <br/>
+                <strong>action</strong>: optional, if provided, the callback will be invoked after the button is clicked, and the dialog instance will be passed to the callback function.
             </td>
         </tr>
         <tr>
@@ -1107,8 +1087,7 @@
                 <strong>true (default)</strong> | false
             </td>
             <td>
-                When it's true, all modal stuff will be removed from the DOM tree after the dialog is popped down, set
-                it to false if you need your dialog (same instance) pups up and down again and again.
+                When it's true, all modal stuff will be removed from the DOM tree after the dialog is popped down, set it to false if you need your dialog (same instance) pups up and down again and again.
             </td>
         </tr>
         <tr>
@@ -1117,8 +1096,7 @@
                 String
             </td>
             <td>
-                If provided, 'aria-describedby' attribute will be added to the dialog with the description string as its
-                value. This can improve accessibility, as the description can be read by screen readers.
+                If provided, 'aria-describedby' attribute will be added to the dialog with the description string as its value. This can improve accessibility, as the description can be read by screen readers.
             </td>
         </tr>
         <tr>
@@ -1127,8 +1105,7 @@
                 true | false
             </td>
             <td>
-                Automatically convert line breaking character to &lt;br /&gt; if it's set to true, everything keeps
-                original if it's false.
+                Automatically convert line breaking character to &lt;br /&gt; if it's set to true, everything keeps original if it's false.
             </td>
         </tr>
         </tbody>
@@ -1197,23 +1174,17 @@
         </tr>
         <tr>
             <td>setClosable(boolean)</td>
-            <td>When set to true (default), dialog can be closed by clicking close icon in dialog header, or by clicking
-                outside the dialog, or, ESC key is pressed.
-            </td>
+            <td>When set to true (default), dialog can be closed by clicking close icon in dialog header, or by clicking outside the dialog, or, ESC key is pressed.</td>
         </tr>
         <tr>
             <td>realize()</td>
-            <td>Calling dialog.open() will automatically get this method called first, but if you want to do something
-                on your dialog before it's shown, you can manually call dialog.realize() before calling dialog.open().
-            </td>
+            <td>Calling dialog.open() will automatically get this method called first, but if you want to do something on your dialog before it's shown, you can manually call dialog.realize() before calling dialog.open().</td>
         </tr>
         </tbody>
     </table>
 
     <hr/>
-    <footer class="text-center"><a href="https://github.com/nakupanda/bootstrap3-dialog">Go to the project.</a> | <a
-            href="mailto:javanoob@hotmail.com">Contact me</a> if you can help to improve this example page.
-    </footer>
+    <footer class="text-center"><a href="https://github.com/nakupanda/bootstrap3-dialog">Go to the project.</a> | <a href="mailto:javanoob@hotmail.com">Contact me</a> if you can help to improve this example page.</footer>
 </div>
 
 <script type="text/javascript">
