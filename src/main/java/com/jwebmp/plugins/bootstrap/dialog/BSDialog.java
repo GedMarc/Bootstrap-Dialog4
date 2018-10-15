@@ -35,7 +35,7 @@ import java.util.Objects;
 @ComponentInformation(name = "Bootstrap Dialog Component",
 		description = "A JWebSwing Component for Bootstrap to display dialog message boxes in an easier fashion",
 		url = "https://github.com/EugenMayer/bootstrap-dialog",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapDialog/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapDialog/wiki")
 public class BSDialog<J extends BSDialog<J>>
 		extends Div<BSDialogChildren, BSDialogAttributes, BSDialogFeatures, BSDialogEvents, J>
 {

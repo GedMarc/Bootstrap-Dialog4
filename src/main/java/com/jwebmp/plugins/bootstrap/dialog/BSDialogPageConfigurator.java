@@ -33,15 +33,15 @@ import javax.validation.constraints.NotNull;
 		pluginDependancyUniqueIDs = "jquery,bootstrap",
 		pluginCategories = "bootstrap,web ui,ui,framework",
 		pluginSubtitle = "Make use of Bootstrap's modal more monkey-friendly.",
-		pluginGitUrl = "https://github.com/GedMarc/JWebSwing-BootstrapDialog",
+		pluginGitUrl = "https://github.com/GedMarc/JWebMP-BootstrapDialog",
 		pluginSourceUrl = "https://github.com/EugenMayer/bootstrap-dialog",
-		pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-BootstrapDialog/wiki",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapDialog/wiki",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/BootstrapDialogPlugin.jar/download",
 		pluginIconUrl = "bower_components/bootstrap3-dialog/bootstrap_dialog_icon.jpg",
 		pluginIconImageUrl = "bower_components/bootstrap3-dialog/bootstrap_dialog_logo.jpg",
 		pluginLastUpdatedDate = "2017/03/04")
 public class BSDialogPageConfigurator
-		implements IPageConfigurator
+		implements IPageConfigurator<BSDialogPageConfigurator>
 {
 	/**
 	 * If this configurator is enabled
@@ -104,14 +104,14 @@ public class BSDialogPageConfigurator
 	}
 
 	@Override
-	public Integer sortOrder()
-	{
-		return 150;
-	}
-
-	@Override
 	public boolean enabled()
 	{
 		return BSDialogPageConfigurator.enabled;
+	}
+
+	@Override
+	public Integer sortOrder()
+	{
+		return 150;
 	}
 }
