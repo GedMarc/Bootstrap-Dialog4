@@ -39,7 +39,6 @@ public class BSDialogOptions<J extends BSDialogOptions>
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private BSDialogTypes type;
 	private BSDialogDialogSizes size;
