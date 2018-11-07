@@ -42,7 +42,7 @@ public class BSDialogTest
 		                         .trim()
 		                         .replaceAll("\n", "")
 		                         .replaceAll("\t", ""));
-		Assertions.assertEquals("BootstrapDialog.show({  \"title\" : \"\",  \"message\" : \"\",  \"closable\" : true,  \"closeIcon\" : \"close\",  \"autodestroy\" : true});",
+		Assertions.assertEquals("BootstrapDialog.show({  \"closable\" : true,  \"closeIcon\" : \"close\",  \"autodestroy\" : true});",
 		                        dialog.renderJavascript()
 		                              .toString()
 		                              .trim()
@@ -68,7 +68,7 @@ public class BSDialogTest
 		                         .replaceAll("\n", "")
 		                         .replaceAll("\t", ""));
 		Assertions.assertEquals(
-				"BootstrapDialog.show({  \"title\" : \"\",  \"message\" : \"\",  \"type\" : \"type-warning\",  \"size\" : \"size-large\",  \"closable\" : true,  \"closeIcon\" : \"close\",  \"autodestroy\" : true});",
+				"BootstrapDialog.show({  \"type\" : \"type-warning\",  \"size\" : \"size-large\",  \"closable\" : true,  \"closeIcon\" : \"close\",  \"autodestroy\" : true});",
 				dialog.renderJavascript()
 				      .toString()
 				      .trim()
