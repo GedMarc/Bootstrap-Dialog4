@@ -1,9 +1,3 @@
-import com.jwebmp.core.services.IPageConfigurator;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions;
-import com.jwebmp.plugins.bootstrap.dialog.BSDialogPageConfigurator;
-import com.jwebmp.plugins.bootstrap.dialog.implementations.BootstrapDialog4ExclusionsModule;
-
 module com.jwebmp.plugins.bootstrap.dialog4 {
 	exports com.jwebmp.plugins.bootstrap.dialog;
 
@@ -13,10 +7,10 @@ module com.jwebmp.plugins.bootstrap.dialog4 {
 	requires java.validation;
 	requires com.jwebmp.guicedinjection;
 
-	provides IPageConfigurator with BSDialogPageConfigurator;
+	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.bootstrap.dialog.BSDialogPageConfigurator;
 
-	provides IGuiceScanJarExclusions with BootstrapDialog4ExclusionsModule;
-	provides IGuiceScanModuleExclusions with BootstrapDialog4ExclusionsModule;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions with com.jwebmp.plugins.bootstrap.dialog.implementations.BootstrapDialog4ExclusionsModule;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.bootstrap.dialog.implementations.BootstrapDialog4ExclusionsModule;
 
 	opens com.jwebmp.plugins.bootstrap.dialog to com.fasterxml.jackson.databind, com.jwebmp.core;
 }
