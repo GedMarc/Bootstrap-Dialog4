@@ -14,30 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.bootstrap.dialog;
+package com.jwebmp.plugins.bs4.dialog;
 
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.jwebmp.core.utilities.StaticStrings;
-
-import static com.jwebmp.core.utilities.StaticStrings.*;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 
 /**
  * @author GedMarc
  * @version 1.0
- * @since Oct 3, 2016
+ * @since 07 Aug 2015
  */
-public enum BSDialogDialogSizes
+public interface BSDialogFeatures
+		extends GlobalFeatures
 {
-	SIZE_NORMAL,
-	SIZE_WIDE,
-	SIZE_LARGE;
-
-	@JsonValue
-	@Override
-	public String toString()
-	{
-		return name().toLowerCase()
-		             .replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
-	}
 
 }

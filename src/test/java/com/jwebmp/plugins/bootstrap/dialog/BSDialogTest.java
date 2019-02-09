@@ -16,6 +16,9 @@
  */
 package com.jwebmp.plugins.bootstrap.dialog;
 
+import com.jwebmp.plugins.bs4.dialog.BSDialog;
+import com.jwebmp.plugins.bs4.dialog.BSDialogDialogSizes;
+import com.jwebmp.plugins.bs4.dialog.BSDialogTypes;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
