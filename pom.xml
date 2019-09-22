@@ -22,24 +22,24 @@
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-        </dependency>
+            <artifactId>junit-jupiter-api</artifactId><type>jar</type>
+            </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-        </dependency>
+            <artifactId>assertj-core</artifactId><type>jar</type>
+            </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-        </dependency>
+            <artifactId>mockito-core</artifactId><type>jar</type>
+            </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-        </dependency>
+            <artifactId>hamcrest-all</artifactId><type>jar</type>
+            </dependency>
         <dependency>
             <groupId>com.jwebmp.plugins.bootstrap</groupId>
-            <artifactId>jwebmp-bootstrap</artifactId>
-        </dependency>
+            <artifactId>jwebmp-bootstrap</artifactId><type>jar</type>
+            </dependency>
     </dependencies>
 
     <scm>
