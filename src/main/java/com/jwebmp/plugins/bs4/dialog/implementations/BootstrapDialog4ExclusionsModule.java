@@ -1,7 +1,7 @@
 package com.jwebmp.plugins.bs4.dialog.implementations;
 
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions;
+import com.guicedee.guicedinjection.interfaces.IGuiceScanJarExclusions;
+import com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions;
 
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
