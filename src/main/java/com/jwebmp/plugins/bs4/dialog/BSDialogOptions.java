@@ -34,9 +34,10 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
  * 		<p>
  * @since Mar 4, 2015
  */
+@SuppressWarnings({"rawtypes", "unchecked"})
 @JsonPropertyOrder({"title", "message"})
-public class BSDialogOptions<J extends BSDialogOptions>
-		extends JavaScriptPart
+public class BSDialogOptions<J extends BSDialogOptions<J>>
+		extends JavaScriptPart<J>
 {
 
 
