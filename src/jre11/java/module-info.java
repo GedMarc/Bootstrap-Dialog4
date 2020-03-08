@@ -9,7 +9,6 @@ module com.jwebmp.plugins.bs4.dialog {
 
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.bs4.dialog.BSDialogPageConfigurator;
 
-	provides com.guicedee.guicedinjection.interfaces.IGuiceScanJarExclusions with com.jwebmp.plugins.bs4.dialog.implementations.BootstrapDialog4ExclusionsModule;
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.bs4.dialog.implementations.BootstrapDialog4ExclusionsModule;
 
 	opens com.jwebmp.plugins.bs4.dialog to com.fasterxml.jackson.databind, com.jwebmp.core;
