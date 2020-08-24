@@ -19,6 +19,8 @@ package com.jwebmp.plugins.bs4.dialog;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.jwebmp.core.utilities.StaticStrings;
 
+import static com.guicedee.guicedinjection.json.StaticStrings.CHAR_DASH;
+import static com.guicedee.guicedinjection.json.StaticStrings.CHAR_UNDERSCORE;
 import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
@@ -40,7 +42,7 @@ public enum BSDialogTypes
 	public String toString()
 	{
 		return name().toLowerCase()
-		             .replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
+		             .replace(CHAR_UNDERSCORE, CHAR_DASH);
 	}
 
 }
