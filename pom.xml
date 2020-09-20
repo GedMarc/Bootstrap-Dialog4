@@ -23,7 +23,6 @@
         <dependency>
             <groupId>com.jwebmp.plugins.bootstrap</groupId>
             <artifactId>jwebmp-bootstrap</artifactId>
-            <type>jar</type>
         </dependency>
     </dependencies>
 
