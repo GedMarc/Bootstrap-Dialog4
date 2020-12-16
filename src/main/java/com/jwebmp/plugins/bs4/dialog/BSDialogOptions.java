@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 /**
@@ -45,9 +46,9 @@ public class BSDialogOptions<J extends BSDialogOptions<J>>
 	private BSDialogDialogSizes size;
 	private String cssClass;
 	@JsonIgnore
-	private ComponentHierarchyBase title;
+	private IComponentHierarchyBase<?,?> title;
 	@JsonIgnore
-	private ComponentHierarchyBase message;
+	private IComponentHierarchyBase<?,?> message;
 	private Boolean nl2br;
 	private Boolean closable;
 	private Boolean closeByBackdrop;
@@ -145,7 +146,7 @@ public class BSDialogOptions<J extends BSDialogOptions<J>>
 	 *
 	 * @return
 	 */
-	public ComponentHierarchyBase getTitle()
+	public IComponentHierarchyBase<?,?> getTitle()
 	{
 		return title;
 	}
@@ -157,7 +158,7 @@ public class BSDialogOptions<J extends BSDialogOptions<J>>
 	 *
 	 * @return
 	 */
-	public J setTitle(ComponentHierarchyBase title)
+	public J setTitle(IComponentHierarchyBase<?,?> title)
 	{
 		this.title = title;
 		return (J) this;
@@ -174,7 +175,7 @@ public class BSDialogOptions<J extends BSDialogOptions<J>>
 	 *
 	 * @return
 	 */
-	public ComponentHierarchyBase getMessage()
+	public IComponentHierarchyBase<?,?> getMessage()
 	{
 		return message;
 	}
@@ -186,7 +187,7 @@ public class BSDialogOptions<J extends BSDialogOptions<J>>
 	 *
 	 * @return
 	 */
-	public J setMessage(ComponentHierarchyBase message)
+	public J setMessage(IComponentHierarchyBase<?,?> message)
 	{
 		this.message = message;
 		return (J) this;

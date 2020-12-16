@@ -18,6 +18,7 @@ package com.jwebmp.plugins.bs4.dialog;
 
 import com.jwebmp.core.Page;
 import com.jwebmp.core.plugins.PluginInformation;
+import com.jwebmp.core.plugins.PluginStatus;
 import com.jwebmp.core.services.IPageConfigurator;
 
 import jakarta.validation.constraints.NotNull;
@@ -29,17 +30,22 @@ import jakarta.validation.constraints.NotNull;
 @PluginInformation(pluginName = "Bootstrap Dialog",
 		pluginUniqueName = "bootstrap-dialog",
 		pluginDescription = "The Bootstrap Dialog widget for Bootstrap",
-		pluginVersion = "BS3.3.7 / 4a6",
+		pluginVersion = "4.8",
 		pluginDependancyUniqueIDs = "jquery,bootstrap",
 		pluginCategories = "bootstrap,web ui,ui,framework",
 		pluginSubtitle = "Make use of Bootstrap's modal more monkey-friendly.",
 		pluginGitUrl = "https://github.com/GedMarc/JWebMP-BootstrapDialog",
 		pluginSourceUrl = "https://github.com/EugenMayer/bootstrap-dialog",
 		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapDialog/wiki",
-		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/BootstrapDialogPlugin.jar/download",
-		pluginIconUrl = "bower_components/bootstrap3-dialog/bootstrap_dialog_icon.jpg",
-		pluginIconImageUrl = "bower_components/bootstrap3-dialog/bootstrap_dialog_logo.jpg",
-		pluginLastUpdatedDate = "2017/03/04")
+		pluginDownloadUrl = "https://mvnrepository.com/artifact/com.jwebmp.plugins.bootstrap/jwebmp-bootstrap-dialog4",
+		pluginIconUrl = "",
+		pluginIconImageUrl = "",
+		pluginLastUpdatedDate = "2017/03/04",
+		pluginGroupId = "com.jwebmp.plugins.bootstrap",
+		pluginArtifactId = "jwebmp-bootstrap-dialog4",
+		pluginModuleName = "com.jwebmp.plugins.bs4.dialog",
+		pluginStatus = PluginStatus.Released
+)
 public class BSDialogPageConfigurator
 		implements IPageConfigurator<BSDialogPageConfigurator>
 {

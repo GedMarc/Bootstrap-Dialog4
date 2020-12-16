@@ -18,6 +18,7 @@ package com.jwebmp.plugins.bs4.dialog;
 
 import com.jwebmp.core.Component;
 import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.plugins.ComponentInformation;
 
 import java.util.Objects;
@@ -41,7 +42,7 @@ public class BSDialog<J extends BSDialog<J>>
 {
 
 
-	private BSDialogFeature feature;
+	private BSDialogFeature<?> feature;
 
 	/**
 	 * Constructs a new instance of the Bootstrap Dialog Plugin
@@ -56,11 +57,11 @@ public class BSDialog<J extends BSDialog<J>>
 	 *
 	 * @return
 	 */
-	public final BSDialogFeature getFeature()
+	public final BSDialogFeature<?> getFeature()
 	{
 		if (feature == null)
 		{
-			feature = new BSDialogFeature(this);
+			feature = new BSDialogFeature<>(this);
 		}
 		return feature;
 	}
@@ -72,7 +73,8 @@ public class BSDialog<J extends BSDialog<J>>
 	 *
 	 * @return
 	 */
-	public J setTitle(Component title)
+	@SuppressWarnings("unchecked")
+	public J setTitle(IComponentHierarchyBase<?,?> title)
 	{
 		getOptions().setTitle(title);
 		return (J) this;
@@ -84,7 +86,7 @@ public class BSDialog<J extends BSDialog<J>>
 	 * @return
 	 */
 	@Override
-	public BSDialogOptions getOptions()
+	public BSDialogOptions<?> getOptions()
 	{
 		return getFeature().getOptions();
 	}
@@ -96,7 +98,7 @@ public class BSDialog<J extends BSDialog<J>>
 	 *
 	 * @return
 	 */
-	public J setMessage(Component message)
+	public J setMessage(IComponentHierarchyBase<?,?> message)
 	{
 		getOptions().setMessage(message);
 		return (J) this;

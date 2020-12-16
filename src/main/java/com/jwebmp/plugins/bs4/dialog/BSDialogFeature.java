@@ -19,6 +19,7 @@ package com.jwebmp.plugins.bs4.dialog;
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
@@ -28,7 +29,7 @@ import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
  * @since 2013/01/16
  */
 public class BSDialogFeature<J extends BSDialogFeature<J>>
-		extends Feature<GlobalFeatures, BSDialogOptions, J>
+		extends Feature<GlobalFeatures, BSDialogOptions<?>, J>
 
 {
 
@@ -39,7 +40,7 @@ public class BSDialogFeature<J extends BSDialogFeature<J>>
 	 *
 	 * @param forComponent
 	 */
-	public BSDialogFeature(Component forComponent)
+	public BSDialogFeature(IComponentHierarchyBase<?,?> forComponent)
 	{
 		super("BSDialogFeature");
 		setComponent(forComponent);
@@ -64,11 +65,11 @@ public class BSDialogFeature<J extends BSDialogFeature<J>>
 	 * @return
 	 */
 	@Override
-	public BSDialogOptions getOptions()
+	public BSDialogOptions<?> getOptions()
 	{
 		if (super.getOptions() == null)
 		{
-			setOptions(new BSDialogOptions());
+			setOptions(new BSDialogOptions<>());
 		}
 		return super.getOptions();
 	}
