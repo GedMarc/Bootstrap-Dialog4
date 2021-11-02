@@ -114,6 +114,22 @@
                     <include>**/*.xml</include>
                     <include>**/*.txt</include>
                 </includes>
+            </resource><resource>
+                <directory>jar-resources</directory>
+                <targetPath>${project.build.outputDirectory}/META-INF/resources/</targetPath>
+                <excludes>
+                    <exclude>**/*.gzip</exclude>
+                    <exclude>**/*.md</exclude>
+                    <exclude>**/*.md</exclude>
+                    <exclude>**/package.json</exclude>
+                    <exclude>**/bower.json</exclude>
+                    <exclude>**/.bower.json</exclude>
+                    <exclude>**/.gitignore</exclude>
+                    <exclude>**/.jshint</exclude>
+                    <exclude>**/.jshint</exclude>
+                    <exclude>**/Gruntfile.js</exclude>
+                    <exclude>**/*.sh</exclude>
+                </excludes>
             </resource>
         </resources>
 
