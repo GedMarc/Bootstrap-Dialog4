@@ -10,7 +10,7 @@
     <groupId>com.jwebmp.plugins.bootstrap</groupId>
     <artifactId>jwebmp-bootstrap-dialog4</artifactId>
     <packaging>jar</packaging>
-
+    <version>0.0.0_0-SNAPSHOT</version>
     <name>Bootstrap Dialog</name>
     <description>The JWebSwing implementation for Bootstrap Dialog 4</description>
     <url>https://github.com/GedMarc/Bootstrap-Dialog4</url>
