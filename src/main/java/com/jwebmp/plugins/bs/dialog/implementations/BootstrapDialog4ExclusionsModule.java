@@ -1,4 +1,4 @@
-package com.jwebmp.plugins.bs4.dialog.implementations;
+package com.jwebmp.plugins.bs.dialog.implementations;
 
 import com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions;
 

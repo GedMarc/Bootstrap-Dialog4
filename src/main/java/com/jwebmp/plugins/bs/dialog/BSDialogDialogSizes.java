@@ -14,17 +14,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.bs4.dialog;
+package com.jwebmp.plugins.bs.dialog;
 
-import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.jwebmp.core.utilities.StaticStrings;
+
+import static com.guicedee.guicedinjection.json.StaticStrings.CHAR_DASH;
+import static com.guicedee.guicedinjection.json.StaticStrings.CHAR_UNDERSCORE;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc
  * @version 1.0
- * @since 07 Aug 2015
+ * @since Oct 3, 2016
  */
-public interface BSDialogEvents
-		extends GlobalEvents
+public enum BSDialogDialogSizes
 {
+	SIZE_NORMAL,
+	SIZE_WIDE,
+	SIZE_LARGE;
+
+	@JsonValue
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase()
+		             .replace(CHAR_UNDERSCORE, CHAR_DASH);
+	}
 
 }

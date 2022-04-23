@@ -14,35 +14,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.bs4.dialog;
+package com.jwebmp.plugins.bs.dialog;
 
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.jwebmp.core.utilities.StaticStrings;
-
-import static com.guicedee.guicedinjection.json.StaticStrings.CHAR_DASH;
-import static com.guicedee.guicedinjection.json.StaticStrings.CHAR_UNDERSCORE;
-import static com.jwebmp.core.utilities.StaticStrings.*;
+import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
 
 /**
  * @author GedMarc
- * @version 1.0
- * @since Oct 3, 2016
  */
-public enum BSDialogTypes
+enum BSDialogAttributes
+		implements AttributeDefinitions
 {
-	TYPE_DEFAULT,
-	TYPE_INFO,
-	TYPE_PRIMARY,
-	TYPE_SUCCESS,
-	TYPE_WARNING,
-	TYPE_DANGER;
 
-	@JsonValue
+	Visibility;
+
 	@Override
-	public String toString()
+	public boolean isKeyword()
 	{
-		return name().toLowerCase()
-		             .replace(CHAR_UNDERSCORE, CHAR_DASH);
+		return false;
 	}
-
 }

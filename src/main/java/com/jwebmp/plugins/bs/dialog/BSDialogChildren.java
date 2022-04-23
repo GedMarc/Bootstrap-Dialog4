@@ -14,22 +14,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.bs4.dialog;
+package com.jwebmp.plugins.bs.dialog;
 
-import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
+import com.jwebmp.core.base.ComponentBase;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
 /**
  * @author GedMarc
+ * @version 1.0
+ * @since 07 Aug 2015
  */
-enum BSDialogAttributes
-		implements AttributeDefinitions
+interface BSDialogChildren
+		extends GlobalChildren
 {
 
-	Visibility;
-
-	@Override
-	public boolean isKeyword()
-	{
-		return false;
-	}
 }

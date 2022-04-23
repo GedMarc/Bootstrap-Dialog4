@@ -14,9 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.bs4.dialog;
+package com.jwebmp.plugins.bs.dialog;
 
 import com.jwebmp.core.Page;
+import com.jwebmp.core.base.angular.services.annotations.*;
+import com.jwebmp.core.base.angular.services.annotations.angularconfig.*;
 import com.jwebmp.core.plugins.PluginInformation;
 import com.jwebmp.core.plugins.PluginStatus;
 import com.jwebmp.core.services.IPageConfigurator;
@@ -30,7 +32,7 @@ import jakarta.validation.constraints.NotNull;
 @PluginInformation(pluginName = "Bootstrap Dialog",
 		pluginUniqueName = "bootstrap-dialog",
 		pluginDescription = "The Bootstrap Dialog widget for Bootstrap",
-		pluginVersion = "4.8",
+		pluginVersion = "4.4.2",
 		pluginDependancyUniqueIDs = "jquery,bootstrap",
 		pluginCategories = "bootstrap,web ui,ui,framework",
 		pluginSubtitle = "Make use of Bootstrap's modal more monkey-friendly.",
@@ -46,42 +48,16 @@ import jakarta.validation.constraints.NotNull;
 		pluginModuleName = "com.jwebmp.plugins.bs4.dialog",
 		pluginStatus = PluginStatus.Released
 )
+@TsDependency(value = "bootstrap4-dialog",version = "^4.4.2")
+@NgScript(value = "dist/js/bootstrap-dialog.js")
+@NgStyleSheet("dist/less/bootstrap-dialog.less")
 public class BSDialogPageConfigurator
 		implements IPageConfigurator<BSDialogPageConfigurator>
 {
-	/**
-	 * If this configurator is enabled
-	 */
-	private static boolean enabled = true;
 
 	public BSDialogPageConfigurator()
 	{
 		//No config required
-	}
-
-	/**
-	 * Method isEnabled returns the enabled of this AngularAnimatedChangePageConfigurator object.
-	 * <p>
-	 * If this configurator is enabled
-	 *
-	 * @return the enabled (type boolean) of this AngularAnimatedChangePageConfigurator object.
-	 */
-	public static boolean isEnabled()
-	{
-		return BSDialogPageConfigurator.enabled;
-	}
-
-	/**
-	 * Method setEnabled sets the enabled of this AngularAnimatedChangePageConfigurator object.
-	 * <p>
-	 * If this configurator is enabled
-	 *
-	 * @param mustEnable
-	 * 		the enabled of this AngularAnimatedChangePageConfigurator object.
-	 */
-	public static void setEnabled(boolean mustEnable)
-	{
-		BSDialogPageConfigurator.enabled = mustEnable;
 	}
 
 	@NotNull
@@ -89,30 +65,13 @@ public class BSDialogPageConfigurator
 	@SuppressWarnings("unchecked")
 	 public Page<?> configure(Page<?> page)
 	{
-		if (!page.isConfigured() && enabled())
-		{
-			page.getBody()
-			    .getJavascriptReferences()
-			    .add(BSDialogReferencePool.Bootstrap4DialogReference.getJavaScriptReference());
-			page.getBody()
-			    .getCssReferences()
-			    .add(BSDialogReferencePool.Bootstrap4DialogReference.getCssReference());
-
-			page.getBody()
-			    .getJavascriptReferences()
-			    .remove(BSDialogReferencePool.BootstrapDialogReference.getJavaScriptReference());
-			page.getBody()
-			    .getCssReferences()
-			    .remove(BSDialogReferencePool.BootstrapDialogReference.getCssReference());
-		}
-
 		return page;
 	}
 
 	@Override
 	public boolean enabled()
 	{
-		return BSDialogPageConfigurator.enabled;
+		return true;
 	}
 
 	@Override

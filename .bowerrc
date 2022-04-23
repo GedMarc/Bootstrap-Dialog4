@@ -1,7 +1,0 @@
-{
-  "directory": "jar-resources/bower_components",
-  "ignoredDependencies": [
-    "jquery",
-    "bootstrap"
-  ]
-}
