@@ -17,8 +17,8 @@
 package com.jwebmp.plugins.bs.dialog;
 
 import com.jwebmp.core.Page;
-import com.jwebmp.core.base.angular.services.annotations.*;
-import com.jwebmp.core.base.angular.services.annotations.angularconfig.*;
+import com.jwebmp.core.base.angular.client.annotations.angularconfig.*;
+import com.jwebmp.core.base.angular.client.annotations.typescript.*;
 import com.jwebmp.core.plugins.PluginInformation;
 import com.jwebmp.core.plugins.PluginStatus;
 import com.jwebmp.core.services.IPageConfigurator;
@@ -48,7 +48,7 @@ import jakarta.validation.constraints.NotNull;
 		pluginModuleName = "com.jwebmp.plugins.bs4.dialog",
 		pluginStatus = PluginStatus.Released
 )
-@TsDependency(value = "bootstrap4-dialog",version = "^4.4.2")
+@TsDependency(value = "bootstrap4-dialog", version = "^4.4.2")
 @NgScript(value = "dist/js/bootstrap-dialog.js")
 @NgStyleSheet("dist/less/bootstrap-dialog.less")
 public class BSDialogPageConfigurator
